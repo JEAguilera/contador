@@ -1,22 +1,29 @@
 import React, {useState} from 'react';
 
-const ItemListContainer= (props)=> {
-    const[contador,setContador]= useState(12);
+const ItemListContainer= ()=> {
+    const[contador,setContador]= useState(1);
     return(
         <>
-          <button
-          
-            onClick={ contador>=1? setContador(1) : () => setContador(contador--) }>
-            -
-          </button>
-
-          <p>El contador es {(useState)} </p>
+        <div>
+        
+        <p> Cantidades dispobibles= 12 </p>
 
           <button
           
-            onClick={contador<=12? ()=> setContador(contador++): setContador(12)}>
-            +
+            onClick={  () => {
+              return contador <= 0 ? alert('No puedes seguir quitando') : setContador(contador - 1); } }>
+             QUITAR - 
           </button>
+         
+          El contador es {contador} 
+
+          <button
+          
+            onClick={ () => {
+              return contador>=12 ?  alert('Valor Maximo alcanzado' ) : setContador(contador+1); } }>
+             AGREGAR + 
+          </button>
+          </div>
           </>
         )
     }
