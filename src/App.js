@@ -3,7 +3,7 @@ import Navbar from "./components/Navbar/Navbar";
 import './App.css';
 import Card from './components/Card';
 import ItemListContainer from './components/ItemListContainer';
-
+import ItemCount from './components/ItemCount';
 function App() {
   return (
     <div className="App">
@@ -23,11 +23,17 @@ function App() {
 
             <ItemListContainer/>
             
+            <br></br>
+
+            <ItemCount  initial = {1} stock = {10} /> 
             
       </div>     
 
        
     </div>
+
+
+
   );
 }
 
