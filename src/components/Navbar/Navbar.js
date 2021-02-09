@@ -4,7 +4,7 @@ import './Navbar.css'
 const Navbar = () => (
     <header className='navbar'>
        
-       <div className='navbar_title navbar_item'><i class="fas fa-hand-holding-medical"></i>  SECURITASK HyS  </div>
+       <div className='navbar_title navbar_item'><i className="fas fa-hand-holding-medical"></i>  SECURITASK HyS  </div>
        
        <div className='navbar_item'><i class="fas fa-shopping-bag"> </i> Carrito </div>
         

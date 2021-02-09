@@ -1,30 +1,27 @@
-import React, {useState} from 'react';
+import  React from 'react';
+import  productList from '../../mods/productList.js';
 
-const ItemListContainer= ()=> {
-    const[contador,setContador]= useState(1);
+const ItemListContainer = ({greeting})=> {
+
+    const myPromise = new Promise((resolve, reject) => {
+       setTimeout(() =>  resolve('Esto salio bien'), 5000);
+       setTimeout(() =>  resolve(productList), 1000);
+    });
+    
+    myPromise.then((result)=> console.log(result) //,()=>{}
+    );
     return(
         <>
         <div>
-        
-        <p> Cantidades dispobibles= 12 </p>
+            <h2> {greeting}</h2>
 
-          <button
-          
-            onClick={  () => {
-              return contador <= 0 ? alert('No puedes seguir quitando') : setContador(contador - 1); } }>
-             QUITAR - 
-          </button>
-         
-          El contador es {contador} 
+        </div>
+        </>
+    );
+    
 
-          <button
-          
-            onClick={ () => {
-              return contador>=12 ?  alert('Valor Maximo alcanzado' ) : setContador(contador+1); } }>
-             AGREGAR + 
-          </button>
-          </div>
-          </>
-        )
-    }
-    export default ItemListContainer;
+
+
+};
+
+export default ItemListContainer;
